@@ -8,6 +8,7 @@ import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
+import org.acme.adapter.`in`.controller.OrderRequest
 import java.time.ZonedDateTime
 import java.util.*
 
@@ -30,6 +31,17 @@ class OrdersEntity : PanacheEntityBase {
     @Column(name = "updated_at")
     @Serializable(with = ZonedDateTimeSerializer::class)
     var updatedAt: ZonedDateTime? = null
+
+    companion object {
+        fun create(orderRequest: OrderRequest): OrdersEntity {
+            val order = OrdersEntity()
+            with(order) {
+                name = orderRequest.name
+                createdAt = ZonedDateTime.now()
+            }
+            return order
+        }
+    }
 }
 
 class UUIDSerializer : KSerializer<UUID> {

@@ -1,0 +1,58 @@
+execution:
+  - concurrency: 200
+    ramp-up: 30s
+    hold-for: 15m
+    scenario: cache-performance
+
+scenarios:
+  cache-performance:
+    default-address: http://localhost:8080
+
+    requests:
+      - url: /orders
+        label: create-orders
+        method: POST
+        think-time: 0.1
+        headers:
+          cache-control: no-cache
+          Accept: application/json
+        body: |
+          {
+            "name": "test"
+          }
+        assertions:
+          - contains:
+              subject: body
+              contains: ".name"
+          - status:
+              status: 200
+        extract-jsonpath:
+          name: $.name
+          default: NOT_FOUND
+
+      - url: /orders/{name}
+        label: get-orders-by-name
+        method: GET
+        think-time: 0.1
+        headers:
+          cache-control: no-cache
+          Accept: application/json
+        assert:
+          - contains:
+              - 200
+            subject: status-code
+            not: false
+
+      - url: /orders
+        label: get-orders-paginated
+        method: GET
+        think-time: 0.1
+        headers:
+          cache-control: no-cache
+          Accept: application/json
+        assertions:
+          - contains:
+              subject: body
+              contains: ".id"
+          - status:
+              status: 200
