@@ -10,4 +10,7 @@ pluginManagement {
         id(quarkusPluginId) version quarkusPluginVersion
     }
 }
-rootProject.name="performance-boost"
+
+rootProject.name="Performance-Boost"
+
+include("cache-performance")
