@@ -56,6 +56,7 @@ subprojects {
         implementation("io.quarkus:quarkus-smallrye-health")
         implementation("io.quarkus:quarkus-flyway")
         implementation("io.quarkus:quarkus-jdbc-postgresql")
+        implementation("io.quarkus:quarkus-smallrye-health")
 
         testImplementation("io.quarkus:quarkus-junit5-mockito")
         testImplementation("io.rest-assured:rest-assured")

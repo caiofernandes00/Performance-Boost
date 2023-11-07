@@ -11,10 +11,10 @@ class OrdersControllerTest {
     @Test
     fun testHelloEndpoint() {
         given()
-          .`when`().get("/hello")
-          .then()
-             .statusCode(200)
-             .body(`is`("Hello from RESTEasy Reactive"))
+            .`when`().get("/q/health")
+            .then()
+            .statusCode(200)
+            .body("status", `is`("UP"))
     }
 
 }
