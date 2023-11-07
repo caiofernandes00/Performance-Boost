@@ -55,6 +55,7 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         implementation("io.quarkus:quarkus-smallrye-health")
         implementation("io.quarkus:quarkus-flyway")
+        implementation("io.quarkus:quarkus-jdbc-postgresql")
 
         testImplementation("io.quarkus:quarkus-junit5-mockito")
         testImplementation("io.rest-assured:rest-assured")
