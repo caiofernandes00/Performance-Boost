@@ -22,7 +22,6 @@ class MyUser(HttpUser):
 
         params = {"page": 0, "perPage": 10}
         headers = {
-            "Content-Type": "application/json",
-            "If-None-Match": self.eTag
+            "Content-Type": "application/json"
         }
         self.client.get("/orders", params=params, headers=headers)
