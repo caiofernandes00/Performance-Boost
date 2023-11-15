@@ -8,7 +8,7 @@ import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
-import org.acme.adapter.`in`.controller.OrderRequest
+import org.acme.adapter.`in`.controller.dto.OrderRequest
 import java.time.ZonedDateTime
 import java.util.*
 

@@ -47,7 +47,6 @@ subprojects {
         implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
         implementation("io.quarkus:quarkus-arc")
         implementation("io.quarkus:quarkus-kotlin")
-        implementation("io.quarkus:quarkus-rest-client-reactive-kotlin-serialization")
         implementation("io.quarkus:quarkus-resteasy-reactive-kotlin-serialization")
         implementation("io.quarkus:quarkus-resteasy-reactive-kotlin")
         implementation("io.quarkus:quarkus-hibernate-reactive-panache-kotlin")

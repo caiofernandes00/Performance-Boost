@@ -8,9 +8,6 @@ import org.acme.adapter.out.hibernate.entity.OrdersEntity
 
 @ApplicationScoped
 class OrdersRepository : PanacheRepositoryBase<OrdersEntity, Long> {
-    fun findByName(name: String): Uni<OrdersEntity?> {
-        return find("name", name).firstResult()
-    }
 
     fun findPaginated(page: Int, perPage: Int): Uni<List<OrdersEntity>> {
         return findAll().page(page, perPage).list()

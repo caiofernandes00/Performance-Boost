@@ -19,12 +19,6 @@ class OrdersController(
         @QueryParam("page") page: Int? = null, @QueryParam("perPage") perPage: Int? = null
     ): Uni<List<OrdersEntity>> = ordersRepository.findPaginated(page ?: 0, perPage ?: 10)
 
-    @GET
-    @Path("{name}")
-    fun getOrderByName(
-        @PathParam("name") name: String,
-    ): Uni<OrdersEntity?> = ordersRepository.findByName(name)
-
     @POST
     fun createOrder(
         orderRequest: OrderRequest,

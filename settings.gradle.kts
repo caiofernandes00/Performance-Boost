@@ -13,5 +13,5 @@ pluginManagement {
 
 rootProject.name="Performance-Boost"
 
-include("example-service")
+include("caching-app")
 include("shared-service")
